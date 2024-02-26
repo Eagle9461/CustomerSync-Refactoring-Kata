@@ -11,7 +11,8 @@ export class Customer {
               public name: string | null = null,
               public customerType: CustomerType | null = null,
               public companyNumber: string | null = null,
-              public shoppingLists: ShoppingList[] = []) {
+              public shoppingLists: ShoppingList[] = [],
+              public bonusPointsBalance: number | null = null ) {
   }
 
   addShoppingList(consumerShoppingList: ShoppingList) {

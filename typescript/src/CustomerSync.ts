@@ -46,6 +46,7 @@ export class CustomerSync {
 
     await this.updateRelations(externalCustomer, customer);
     this.updatePreferredStore(externalCustomer, customer);
+    this.updateBonusPointsBalance(externalCustomer, customer);
 
     return created;
   }
@@ -77,6 +78,12 @@ export class CustomerSync {
 
   private updatePreferredStore(externalCustomer: ExternalCustomer, customer: Customer) {
     customer.preferredStore = externalCustomer.preferredStore;
+  }
+
+  private updateBonusPointsBalance(externalCustomer: ExternalCustomer, customer: Customer) {
+    if(!externalCustomer.isCompany()) {
+      customer.bonusPointsBalance = externalCustomer.bonusPointsBalance;
+    }
   }
 
   private createCustomer(customer: Customer) {

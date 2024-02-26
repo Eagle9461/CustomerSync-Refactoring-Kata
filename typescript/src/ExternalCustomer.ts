@@ -7,7 +7,8 @@ export class ExternalCustomer {
               public preferredStore: string | null,
               public shoppingLists: ShoppingList[],
               public externalId: string,
-              public companyNumber: string | null) {
+              public companyNumber: string | null, 
+              public bonusPointsBalance: number | null) {
   }
 
   isCompany() {
